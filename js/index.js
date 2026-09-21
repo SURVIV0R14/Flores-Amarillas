@@ -85,10 +85,12 @@
   }
   animate();
 
-  window.addEventListener('resize', () => {
+  function handleResize() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-  });
+  }
+  window.addEventListener('resize', handleResize);
+  window.addEventListener('orientationchange', () => setTimeout(handleResize, 100));
 })();
 
 // -- Pétalos cayendo --
